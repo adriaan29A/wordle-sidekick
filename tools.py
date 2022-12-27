@@ -6,7 +6,7 @@ from cmath import inf
 
 
 # Tuple indexes
-WORD        = 0
+WORD        = 0 
 ENTROPY     = 1
 FREQ        = 1
 

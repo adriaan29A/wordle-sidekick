@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import { Console } from 'console';
 
 
-const WORD = 0;
+const WORD = 0; 
 const EXPECTED = 1;
 
 const GUESS = 0;
