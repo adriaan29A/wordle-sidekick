@@ -1,0 +1,18 @@
+{
+  "name": "wordle-sidekick",
+  "version": "1.0.0",
+  "description": " A Wordle companion console app that can be used to play against any Wordle site, or play stand-alone too.  Wordle's more fun when you have the option of 'cheating' if you're stuck, or even just curious. The method used is an excelent example of applying information theory to optimize playing strategy. Play with varying word sizes or add your own too.",
+  "main": "wordle.mjs",
+  "scripts": {
+    "test": "t"
+  },
+  "keywords": [
+    "Wordle",
+    "'information",
+    "theory'",
+    "entropy",
+    "Shannon"
+  ],
+  "author": "AC",
+  "license": "ISC"
+}
