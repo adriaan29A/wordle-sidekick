@@ -8,7 +8,7 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 > wordle-sidekick
 
 >? Play mode: m
->? Guess, hint: rates bbbgb
+>? Guess, hint: rates bgbbb
 
 
 ![Alt Text](wordle0.gif)/![](wordle0.gif)
