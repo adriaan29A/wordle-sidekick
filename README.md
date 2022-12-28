@@ -11,7 +11,7 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 >? Guess, hint: rates bgbbb
 
 
-![Alt Text](wordle0.gif)/![](wordle0.gif)
+![Alt Text](wordle0.gif)
 
 
 
