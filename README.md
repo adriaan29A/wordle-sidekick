@@ -10,7 +10,8 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 >? Play mode: m
 >? Guess, hint: rates bbbgb
 
-![Wordle](wordle0.gif) / ![](wordle0.gif)
+
+![Alt Text](wordle0.gif)/![](wordle0.gif)
 
 
 
