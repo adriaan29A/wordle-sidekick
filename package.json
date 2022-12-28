@@ -1,14 +1,16 @@
 {
   "name": "wordle-sidekick",
   "version": "1.0.0",
-  "description": " A Wordle companion app that can be used to play against  Wordle, or play stand-alone too.  Wordle's more fun when you have the option of 'cheating' if you're stuck, or even just curious. The method used is an excelent example of applying information theory to optimize playing strategy. Play with varying word sizes or add your own too.",
-  "main": "wordle.mjs",
+  "description": "A companion app to play competitive Wordle, or for fun too!",   
+  "main": "./wordle.mjs",
+  "module": "wordle.mjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   
   "bin": {
-    "wordle-sidekick": "wordle.mjs"
+    "wordle-sidekick": "./wordle.mjs"
   },
 
   "files": [
