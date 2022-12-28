@@ -28,6 +28,19 @@
     "entropy",
     "Shannon"
   ],
-  "author": "AC",
-  "license": "ISC"
+  
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/adriaan29A/wordle-sidekick.git"
+    },
+  
+    "dependencies": {
+      "arg": "^5.0.2",
+      "esm": "^3.2.18",
+      "fs": "^0.0.1-security",
+      "inquirer": "^9.0.0"
+    },
+
+  "author": "Adriaan",
+  "license": "MIT"
 }
