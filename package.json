@@ -1,21 +1,21 @@
 {
   "name": "wordle-sidekick",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A companion app to play competitive Wordle, or for fun too!",   
-  "main": "./wordle.mjs",
-  "module": "wordle.mjs",
+  "main": "./wordle.js",
+  "module": "./wordle.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   
   "bin": {
-    "wordle-sidekick": "./wordle.mjs"
+    "wordle-sidekick": "./wordle.js"
   },
 
   "files": [
-    "wordle.mjs",
-    "python.py",
+    "wordle.js",
+    "tools.py",
     "package.json",
     "README.md",
     "entropies/*.*",
@@ -25,8 +25,7 @@
   "keywords": [
     "Wordle",
     "information theory",
-    "entropy",
-    "Shannon"
+    "Shannon entropy"
   ],
   
     "repository": {

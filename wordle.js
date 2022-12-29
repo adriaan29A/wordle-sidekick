@@ -11,18 +11,17 @@ const HINT = 1;
 
 // Hint colors - black, green, yellow.
 const MISS = 'b'; const HIT = 'g'; const OTHER = 'y';
-
-// # of characters in the wordle being played. Set from looking at 
-// the file contents loaded in read_word_data(...)
-
-const NROWS = 5;
-const DEFAULT_WORDLE_DATA = './entropies/words5.json';
-
 const Hint = {
 	miss: MISS,
 	hit: HIT,
 	other: OTHER
 };
+
+// # Output lines in display_results
+const NROWS = 5;
+
+const DEFAULT_WORDLE_DATA = './entropies/words5.json';
+
 
 //
 // Core logic

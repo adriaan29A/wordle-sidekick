@@ -5,13 +5,18 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 
 # Usage
 
+1) Play against an online site and manually input the hints the site provides (b/g/y are mnemonics for black, green, yellow)
+
 > wordle-sidekick
 
 >? Play mode: m
+
 >? Guess, hint: rates bgbbb
 
+...
 
-![Alt Text](wordle0.gif)
+![](https://github.com/adriaan29A/wordle-sidekick/blob/main/wordle0.gif)
+
 
 
 
