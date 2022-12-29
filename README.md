@@ -17,6 +17,22 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 
 ![](https://github.com/adriaan29A/wordle-sidekick/blob/main/wordle0.gif)
 
+2) Play against the app which generates the hints automatically:
+
+>? Play mode: a
+
+>? Guess: ariel
+
+...
+
+https://user-images.githubusercontent.com/88779001/210019361-092b25b9-cb0b-4928-8fe1-71131bf3a657.mp4
+
+
+
+
+
+
+
 
 
 
