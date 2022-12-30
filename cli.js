@@ -1,7 +1,12 @@
+#!/usr/bin/env node
+
 import * as fs from 'fs';
 import inquirer from 'inquirer';
 import { Console } from 'console';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const WORD = 0; 
 const EXPECTED = 1;
@@ -20,7 +25,7 @@ const Hint = {
 // # Output lines in display_results
 const NROWS = 5;
 
-const DEFAULT_WORDLE_DATA = './entropies/words5.json';
+const DEFAULT_WORDLE_DATA = __dirname + '/entropies/words5.json';
 
 
 //
@@ -294,7 +299,7 @@ async function async_main(word_size, play_mode) {
 
 	var filename;
 	if (word_size != '')
-		filename = './entropies/words' + word_size + '.json';
+		filename = __dirname + '/entropies/words' + word_size + '.json';
 	else
 		filename = DEFAULT_WORDLE_DATA;
 

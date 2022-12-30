@@ -1,18 +1,18 @@
 {
   "name": "wordle-sidekick",
-  "version": "1.0.10",
+  "version": "1.0.13",
   "description": "A companion app to play competitive Wordle, or for fun too!",
-  "main": "./wordle.js",
-  "module": "./wordle.js",
+  "main": "cli.js",
+  "module": "cli.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "wordle-sidekick": "./wordle.js"
+    "wordle-sidekick": "cli.js"
   },
   "files": [
-    "wordle.js",
+    "cli.js",
     "tools.py",
     "package.json",
     "README.md",
