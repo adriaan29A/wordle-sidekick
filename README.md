@@ -25,10 +25,7 @@ It would be be boring if you cheated at every turn so don't! Play against any Wo
 
 ...
 
-![])https://user-images.githubusercontent.com/88779001/210019361-092b25b9-cb0b-4928-8fe1-71131bf3a657.mp4)
-
-
-
+![wordle1](https://user-images.githubusercontent.com/88779001/210022892-24c5c667-2524-439c-96e6-5e5a7417f5f1.gif)
 
 
 
