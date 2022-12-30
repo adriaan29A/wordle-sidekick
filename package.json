@@ -1,6 +1,6 @@
 {
   "name": "wordle-sidekick",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A companion app to play competitive Wordle, or for fun too!",
   "main": "cli.js",
   "module": "cli.js",
