@@ -33,13 +33,27 @@ You can hit 'q' at any time to quit. 'h' for help to come. 't' to see a play loo
 
 # Tryout other word sizes. 
 
-![There's at least one web site out there](https://wordlegame.org/)
+There's at least one web site out there that does - https://wordlegame.org/
 
 Pass either the word size or the play mode on the command line or both:
 
 > wordle-sidekick 6 m
 
 where word size always precedes play-mode
+
+# Implementation
+
+- Simple JS console app written semi-pedantically to show how how the method works. Requires inquirer.js for input UI
+
+- Simple Python script to generate the entropies. Also shows how word frequencies are factored in to threshold guess choices which is pretty neat and something I struggled with until I saw 3Blue1Brown's video.
+
+
+
+
+
+
+
+
 
 
 
