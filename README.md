@@ -42,8 +42,11 @@ There's at least one site out out there which supports this that you can play ag
 Pass either the word size or the play mode on the command line or both:
 
 > wordle-sidekick a
+
 > wordle-sidekick 7
+
 > wordle-sidekick 6 m
+
 > wordle-sidekick 8 t
 
 where word size precedes play-mode if present
@@ -54,8 +57,7 @@ where word size precedes play-mode if present
 
 - Simple Python script to generate the entropies. Shows how word frequencies are factored in to threshold guess choices which is pretty neat and something I struggled out how to do with until I saw 3Blue1Brown's video.
 
-
-- All entropy and frequency files were genereted from frequencies/google_word_frequencies and wordle_original_words using tools.py.
+- All entropy and frequency files were genereted from frequencies/google_word_frequencies and frequencies/wordle_original_words using tools.py.
 
 
 
