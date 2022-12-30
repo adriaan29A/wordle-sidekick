@@ -1,6 +1,6 @@
 # Introduction
 
-Wordle is more fun when you can cheat (just a little!) using this companion app when you play online, or play stand-alone. This console app uses the information-theoretic method to compute the optimal prioritized list of best guesses to choose from at every turn using the expected value (Shannon entropy) computed for each word in the dictionary as measured in bits. See 3Blue1Brown's Youtube video for an excellent discussion of the subject.
+I think Wordle is more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It uses the information-theoretic method to compute an optimal ranked list of guesses to choose from at every turn.  This involves computing the expected value (Shannon entropy) for each word in the dictionary over the space of color-coded hints and is expressed in bits of information. See 3Blue1Brown's Youtube video for an excellent discussion of the subject.
 
 It would be be boring if you cheated at every turn so don't! Play against any Wordle site  and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
 
@@ -53,11 +53,11 @@ where word size precedes play-mode if present
 
 # Implementation
 
-- Simple JS console app written semi-pedantically to illustrate the logic. Requires inquirer.js for input UI
+- Simple single file JS console app written semi-pedantically to illustrate the logic. Requires inquirer.js for input UI
 
-- Simple Python script to generate the entropies. Shows how word frequencies are factored in to threshold guess choices which is pretty neat and something I struggled out how to do with until I saw 3Blue1Brown's video.
+- Simple single file  Python script to generate the entropies. Shows how word frequencies are factored in to threshold guess choices which is pretty neat and something I struggled out how to do with until I saw 3Blue1Brown's video.
 
-- All entropy and frequency files were genereted from frequencies/google_word_frequencies and frequencies/wordle_original_words using tools.py.
+- All entropy and frequency files are genereted from frequencies/google_word_frequencies and frequencies/wordle_original_words using tools.py.
 
 
 
