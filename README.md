@@ -1,6 +1,6 @@
 # Introduction
 
-I think Wordle is more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It uses the information-theoretic method to compute an optimal ranked list of guesses to choose from at every turn.  This involves computing the expected value (Shannon entropy) for each word in the dictionary over the space of color-coded hints and is expressed in bits of information. See 3Blue1Brown's Youtube video for an excellent discussion of the subject.
+I think Wordle is more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great way to illustrates the usage of Von Neuman Entropy to play Wordle with an optimal strategy. See 3Blue1Brown's Youtube video for an excellent discussion of the subject.
 
 It would be be boring if you cheated at every turn so don't! Play against any Wordle site  and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
 
