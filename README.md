@@ -53,11 +53,11 @@ where word size precedes play-mode if present
 
 # Implementation
 
-- Simple single file JS console app written semi-pedantically to illustrate the logic. Requires inquirer.js for input UI
+- Simple single JS runtime file, written semi-pedantically to illustrate the algorithm. 
 
-- Simple single file  Python script to generate the entropies. Shows how word frequencies are factored in to threshold guess choices which is pretty neat and something I struggled out how to do with until I saw 3Blue1Brown's video.
+- Simple single Python file to generate the entropies. Shows how word frequencies are incorporated to threshold guess choices, which is pretty neat and something I struggled with I saw 3b1b's video.
 
-- All entropy and frequency files are genereted from frequencies/google_word_frequencies and frequencies/wordle_original_words using tools.py.
+- All entropy and frequency files are genereted from google_word_frequencies and wordle_original_words using tools.py. I didn't think it worth it to put these in a dev dependency.
 
 
 
