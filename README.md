@@ -1,48 +1,44 @@
 # Introduction
 
-I think Wordle is actually more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great illustration of the application of information theory to play Wordle using a statistically optimal strategy. In the case of Wordle we want to maximize the amount of information that can be obtained from each guess by computing the average expected value, also known as the Von Neumann entropy, for each word in the game's dictionary
+I think Wordle is actually more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great illustration of the application of information theory to play Wordle using a statistically optimal strategy. In the case of Wordle we want to maximize the amount of information that can be obtained from each guess by computing the average expected value, also known as the Von Neumann entropy, for each word in the game's dictionary:
 
-```math
+![wordle3](https://user-images.githubusercontent.com/88779001/210249127-dda88378-8f22-40a4-be2f-ec5208492b25.png)
 
-\mathsf{H}_w = \sum_{i=1}^N p_i log(1 / p_i)
-
-```
-Where
-- $\mathsf{H}_w$ = the Von Neumann entropy of the word, as expressed in bits
-- $p_i$ = the probability that the ith word in the dictionary is chosen
-- $\log(1 / p_i)$ is the number of bits of information that word generates as a response
-
-See 3Blue1Brown's [Solving Wordle Using Infformation Theory](https://youtu.be/v68zYyaEmEA) for an excellent in-depth discussion of how the algorithm works. 
+See 3Blue1Brown's video [Solving Wordle Using Infformation Theory](https://youtu.be/v68zYyaEmEA) for an excellent in-depth discussion of how the algorithm works. 
 
 It would be be boring if you cheated at every turn so don't! Play against a Wordle site and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
 
+# Example Usage
 
-# Usage
-
-1) Play against an online site and manually input the hints the site provides (b/g/y are mnemonics for black, green, yellow)
+1) Play against an online site, manually entering the hints the site provides (b/g/y are mnemonics for black, green, yellow)
 
 > wordle-sidekick
 
 >? Play mode: m
 
->? Guess, hint: rates bgbbb
+>? Guess, hint: rates bybyb
 
 ...
+![wordle0](https://user-images.githubusercontent.com/88779001/210251566-f1755de3-040e-4f8f-b59a-3552ed04357a.gif)
 
-![](https://github.com/adriaan29A/wordle-sidekick/blob/main/wordle0.gif)
 
-2) Play against the app which generates the hints automatically:
+
+2) Play against the app, in which case a hidden word is randomly chosen.
 
 >? Play mode: a
 
->? Guess: ariel
+>? Guess: rates
+
+![wordle1](https://user-images.githubusercontent.com/88779001/210252035-1b5f9d34-6d3d-4377-9d98-14a8c2a68acc.gif)
 
 ...
 
-![wordle1](https://user-images.githubusercontent.com/88779001/210022892-24c5c667-2524-439c-96e6-5e5a7417f5f1.gif)
+Note:
 
+- You can hit 'q' at any time to quit. 'h' for help to come. 't' to see a play loop of 10 games with random words and guesses. 
+- An index # (0-99) can be used for any guest in the list as long as it is valid. 
+- Hitting <return> when viewing the 'cheat' list will cycle through and display the next set in in the list.
 
-You can hit 'q' at any time to quit. 'h' for help to come. 't' to see a play loop of 10 games with random words and guesses. 
 
 # Try out other word sizes. 
 
