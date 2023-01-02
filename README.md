@@ -1,8 +1,19 @@
 # Introduction
 
-I think Wordle is more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great way to illustrates the usage of Von Neuman Entropy to play Wordle with an optimal strategy. See 3Blue1Brown's Youtube video for an excellent discussion of the subject.
+I think Wordle is actually more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great illustration of the application of information theory to play Wordle using a statistically optimal strategy. In the case of Wordle we want to maximize the amount of information that can be obtained from each guess by computing the average expected value, also known as the Von Neumann entropy, for each word in the game's dictionary:
+```math
 
-It would be be boring if you cheated at every turn so don't! Play against any Wordle site  and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
+\mathsf{H}_w = \sum_{i=1}^N p_i log(1 / p_i)
+
+```
+Where:
+- $\mathsf{H}_w$ = the Von Neumann entropy of the word, measured in bits
+- $p_i$ = the probability that the ith word in the dictionary is used as a guess
+- $\log(1 / p_i)$ is the average number of bits of information that guess yields as a response
+
+See 3Blue1Brown's Youtube video for an excellent discussion of the subject. 
+
+It would be be boring if you cheated at every turn so don't! Play against a Wordle site and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
 
 # Installation
 
