@@ -1,15 +1,13 @@
 # Introduction
 
 I think Wordle is actually more fun when you can cheat (just a little)! Use this CLI solver app when you play online, or play stand-alone. It's also a great illustration of the application of information theory to play Wordle using a statistically optimal strategy. In the case of Wordle we want to maximize the amount of information that can be obtained from each guess by computing the average expected value, also known as the Von Neumann entropy, for each word in the game's dictionary:
-```math
 
-\mathsf{H}_w = \sum_{i=1}^N p_i log(1 / p_i)
+H_w = SUM_i (p_i log(1 / p_i))
 
-```
 Where:
-- $\mathsf{H}_w$ = the Von Neumann entropy of the word, measured in bits
-- $p_i$ = the probability that the ith word in the dictionary is used as a guess
-- $\log(1 / p_i)$ is the average number of bits of information that guess yields as a response
+- H_w = the Von Neumann entropy of the word, measured in bits
+- p_i = the probability that the ith word in the dictionary is used as a guess
+- log(1 / p_i) is the average number of bits of information that word yields as a response
 
 See 3Blue1Brown's Youtube video for an excellent discussion of the subject. 
 

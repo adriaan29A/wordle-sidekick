@@ -1,6 +1,6 @@
 {
   "name": "wordle-sidekick",
-  "version": "1.0.20",
+  "version": "1.0.22",
   "description": "A companion CLI solver to play competitive Wordle, or just for fun!",
   "main": "cli.js",
   "module": "cli.js",
@@ -23,7 +23,7 @@
     "Wordle",
     "Solver",
     "Information Theory",
-    "Von Neuman Entropy",
+    "Von Neumann Entropy",
     "CLI"
   ],
   "repository": {
