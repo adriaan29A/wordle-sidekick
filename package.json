@@ -1,6 +1,6 @@
 {
     "name": "wordle-sidekick",
-    "version": "1.0.22",
+    "version": "1.0.26",
     "description": "A companion CLI solver to play competitive Wordle, or just for fun!",
     "main": "cli.js",
     "module": "cli.js",
