@@ -46,11 +46,9 @@ There's at least one site out out there which supports this that you can play ag
 
 Pass either the word-size or the play mode on the command line or both:
 
-> wordle-sidekick 6
+> wordle-sidekick 8 t
 
-> wordle-sidekick 7 m
-
-where word-size precedes play-mode
+![wordle4](https://user-images.githubusercontent.com/88779001/210403043-0c2e44a4-1e0e-4477-a5b2-de6c94b52e9d.gif)
 
 # Implementation
 
