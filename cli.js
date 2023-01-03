@@ -27,6 +27,7 @@ const NROWS = 5;
 
 const DEFAULT_WORDLE_DATA = __dirname + '/entropies/words5.json';
 
+const NGAMES = 10
 
 //
 // Core logic
@@ -206,13 +207,18 @@ function display_results(by_expected, pagenum) {
 	if (rows == 0)
 		return false;
 
-	var tabs = '';
-	if (by_expected[0][WORD].length >7) tabs = '\t';
-	else tabs = '\t\t';
+
+	var tabs = '\t'; var dashes = '---------------------';
+	if (by_expected[0][WORD].length > 6) 
+	{
+		tabs += '\t'
+		dashes += '--------';
+	}
 
 	console.log('\nTop Words:\n');
-	console.log('#\tword:\t\tbits:');
-	console.log('-----------------------------');
+	console.log('#\tWord' + tabs + 'Bits:');
+	console.log(dashes);
+
 	for (var j = 0; j < rows; j++) {
 		var row = pagenum * NROWS + j;
 		var en = by_expected [row];
@@ -327,7 +333,7 @@ async function async_main(word_size, play_mode) {
 		question = prompt_guess_and_hint(word_size);
 	}
 	else if (play_mode == 't') {
-		run_play_loop(words, 20);
+		run_play_loop(words, NGAMES);
 	}
 	else if (play_mode == 'q') {
 		return true;
