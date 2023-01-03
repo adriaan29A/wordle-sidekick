@@ -206,15 +206,19 @@ function display_results(by_expected, pagenum) {
 	if (rows == 0)
 		return false;
 
+	var tabs = '';
+	if (by_expected[0][WORD].length >7) tabs = '\t';
+	else tabs = '\t\t';
+
 	console.log('\nTop Words:\n');
-	console.log('#\tword:\tbits:');
-	console.log('---------------------');
+	console.log('#\tword:\t\tbits:');
+	console.log('-----------------------------');
 	for (var j = 0; j < rows; j++) {
 		var row = pagenum * NROWS + j;
 		var en = by_expected [row];
 			console.log(
 				(pagenum*NROWS + j + 1).toString() + ')\t' + en[WORD] 
-				+ "   " + en[EXPECTED].toFixed(2).toString());
+				+ tabs + en[EXPECTED].toFixed(2).toString());
 	}	
 
 	if (rows < NROWS)
@@ -489,7 +493,7 @@ function play_one_game(words) {
 	}
 }
 
-var rgxargs= '^([4-8]|[atm])$';
+var rgxargs= '^(([4-9]|10)|[atm])$';
 var badargs = 'Bad command line args';
 
 export var main = function () {
