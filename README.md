@@ -6,7 +6,7 @@ I think Wordle is actually more fun when you can cheat (just a little)! Use this
 
 See 3Blue1Brown's video [Solving Wordle Using Infformation Theory](https://youtu.be/v68zYyaEmEA) for an excellent in-depth discussion of how the algorithm works. 
 
-It would be be boring if you cheated at every turn so don't! Play against a Wordle site and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes
+It would be be boring if you cheated at every turn so don't! Play against a Wordle site and have a peek at the top guesses only when you're really stumped.  It's fun to see how far you can get without a 'cheat' and a relief to know you can when you want to. You can also play with different word sizes: 4-10 characters supported.
 
 # Example Usage
 
