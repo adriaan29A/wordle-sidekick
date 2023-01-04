@@ -207,16 +207,15 @@ function display_results(by_expected, pagenum) {
 	if (rows == 0)
 		return false;
 
-
-	var tabs = '\t'; var dashes = '---------------------';
-	if (by_expected[0][WORD].length > 6) 
-	{
-		tabs += '\t'
+	var t1 = '\t'; var t2 = t1; 
+	var dashes = '---------------------';
+	var wsize = by_expected[0][WORD].length;
+	if (wsize > 7) {
+		t1 += '\t';
 		dashes += '--------';
 	}
-
 	console.log('\nTop Words:\n');
-	console.log('#\tWord' + tabs + 'Bits:');
+	console.log('#\tWord:' + t1 + 'Bits:');
 	console.log(dashes);
 
 	for (var j = 0; j < rows; j++) {
@@ -224,7 +223,7 @@ function display_results(by_expected, pagenum) {
 		var en = by_expected [row];
 			console.log(
 				(pagenum*NROWS + j + 1).toString() + ')\t' + en[WORD] 
-				+ tabs + en[EXPECTED].toFixed(2).toString());
+					+ t2 + en[EXPECTED].toFixed(2).toString());
 	}	
 
 	if (rows < NROWS)
@@ -233,6 +232,7 @@ function display_results(by_expected, pagenum) {
 		return true;
 }
 
+// I should have used chalk
 function print_color_coded_guesses(guesses, hints) {
 	var color = '';  var argspec = '';
 	var colorspec = '[ ';
