@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const WORD = 0; 
+const WORD = 0;
 const EXPECTED = 1;
 
 const GUESS = 0;
@@ -27,7 +27,7 @@ const NROWS = 5;
 
 const DEFAULT_WORDLE_DATA = __dirname + '/entropies/words5.json';
 
-const NGAMES = 10
+const NGAMES = 10;
 
 //
 // Core logic
@@ -88,14 +88,14 @@ export var read_word_data = function(filename) {
 	try {data = fs.readFileSync(filename, 'utf8');
 			lines = data.split('\n').filter(Boolean);
 		} catch (err) {
-		console.error(err); 
+		console.error(err);
 	}
 
 	var length = lines.length;
 	for (var i = 0; i < length - 1; i++) {
 		var l = lines[i];
 		var t = JSON.parse(l);
-		words.push(t);		
+		words.push(t);
 	}
 	return words;
 }
@@ -112,12 +112,12 @@ const prompt_play_mode = [{
 	type: "input", name:'data', message: 'Play mode:',
 
 	filter(response) {
-		if (response.length == 0) 
+		if (response.length == 0)
 			return 'a';
 		return response;
 	},
 	validate(response) {
-		if ((response != 'a') && (response != 'm') 
+		if ((response != 'a') && (response != 'm')
 			&& (response != 't') && (response != 'q'))
 			return (errmsg_mode);
 		return true;
@@ -134,23 +134,23 @@ function prompt_guess_only(word_size) {
 		validate(response) {
 			if (response.length == 0)
 				return true;
-	
+
 			if (response.length != 1)
 				return (errmsg_guess);
-	
+
 			var rgx_guess =  '^([a-z]{' + word_size + '}|[phq]|[0-9]{1,2})$';
-	
+
 			var regex = new RegExp(rgx_guess);
-			if (response[GUESS].match(regex) == null) 
+			if (response[GUESS].match(regex) == null)
 				return (errmsg_guess);
-			
+
 			return true;
 		}
 	}];
 }
 
 function prompt_guess_and_hint(word_size) {
-	
+
 	return [{
 		type: "input", name: "data", message: "guess, hint:" ,
 		filter(response) {
@@ -165,7 +165,7 @@ function prompt_guess_and_hint(word_size) {
 
 			var rgx_guess =  '^([a-z]{' + word_size + '}|[phq]|[0-9]{1,2})$';
 			var regex = new RegExp(rgx_guess);
-			if (response[GUESS].match(regex) == null) 
+			if (response[GUESS].match(regex) == null)
 				return (errmsg_guess_hint);
 
 			if ((response.length == 1) && (response[GUESS].length == 1)) {
@@ -185,7 +185,7 @@ function prompt_guess_and_hint(word_size) {
 			}
 			else
 				return errmsg_guess_hint;
-	
+
 		return true;
 	}
 }];
@@ -196,10 +196,10 @@ function prompt_guess_and_hint(word_size) {
 // Output
 //
 
-function display_results(by_expected, pagenum) {
+function display_results(entropies, pagenum) {
 
-	var listsize = by_expected.length;
-	if (((pagenum + 1) * NROWS) <= listsize) 
+	var listsize = entropies.length;
+	if (((pagenum + 1) * NROWS) <= listsize)
 		var rows = NROWS;
 	else
 		var rows = listsize % NROWS;
@@ -207,9 +207,9 @@ function display_results(by_expected, pagenum) {
 	if (rows == 0)
 		return false;
 
-	var t1 = '\t'; var t2 = t1; 
+	var t1 = '\t'; var t2 = t1;
 	var dashes = '---------------------';
-	var wsize = by_expected[0][WORD].length;
+	var wsize = entropies[0][WORD].length;
 	if (wsize > 7) {
 		t1 += '\t';
 		dashes += '--------';
@@ -220,15 +220,15 @@ function display_results(by_expected, pagenum) {
 
 	for (var j = 0; j < rows; j++) {
 		var row = pagenum * NROWS + j;
-		var en = by_expected [row];
+		var en = entropies [row];
 			console.log(
-				(pagenum*NROWS + j + 1).toString() + ')\t' + en[WORD] 
+				(pagenum*NROWS + j + 1).toString() + ')\t' + en[WORD]
 					+ t2 + en[EXPECTED].toFixed(2).toString());
-	}	
+	}
 
 	if (rows < NROWS)
 		return false;
-	else 
+	else
 		return true;
 }
 
@@ -242,11 +242,11 @@ function print_color_coded_guesses(guesses, hints) {
 
 			if (hints[i][j] == Hint.miss)
 				color = '\x1b[1;1m%s\x1b[0m'; // black
-			else if(hints[i][j] == Hint.other) 
+			else if(hints[i][j] == Hint.other)
 				color = '\x1b[1;43m%s\x1b[0m'; // yellow
 			else
 				color ='\x1b[1;42m%s\x1b[0m'; // green
-		
+
 			colorspec += color;
 		}
 		colorspec += ' ] [ ';
@@ -255,7 +255,7 @@ function print_color_coded_guesses(guesses, hints) {
 			argspec += 'guesses[' + i.toString() + '][' + j.toString() + '],';
 	}
 
-	argspec = argspec.slice(0, -1);	
+	argspec = argspec.slice(0, -1);
 	colorspec = colorspec.slice(0, -2);
 	var printspec = 'console.log(\'Guesses:  ' + colorspec + '\'' + ',' + argspec +');';
 	eval(printspec);
@@ -267,9 +267,9 @@ function display_summary(matches, expected, actual,
 	 if(!matches.length)
 		return;
 
-	console.log('\nGuess:\t\t' + '\x1b[1;34m%s\x1b[0m', guess);  
+	console.log('\nGuess:\t\t' + '\x1b[1;34m%s\x1b[0m', guess);
 
-	if (secret != '') 
+	if (secret != '')
 		console.log('Correct word:\t' + '\x1b[1;32m%s\x1b[0m', secret)  ;
 
 	console.log('\nExpect:\t\t' + (expected.toFixed(2)).toString() + ' bits');
@@ -288,7 +288,7 @@ function lookup_in_dictionary(guess, matches) {
 			return t;
 	}
 	return null;
-}	
+}
 
 const HARDNESS1 = 2500;
 function generate_secret(words) {
@@ -313,19 +313,19 @@ async function async_main(word_size, play_mode) {
 	else
 		filename = DEFAULT_WORDLE_DATA;
 
-	// Read in the (word, entropy) tuples. The file data 
+	// Read in the (word, entropy) tuples. The file data
 	// is pre-sorted by entropy, no further sorting is necessary
 	var words = read_word_data (filename);
-	var matches = words; 
+	var matches = words;
 	word_size = matches[0][WORD].length.toString();
 
-	// 
+	//
 	console.clear();
 	if (play_mode == ''){
 		var result = await inquirer.prompt(prompt_play_mode);
 		play_mode = result.data;
 	}
-	
+
 	if (play_mode == 'a') {
 		question = prompt_guess_only(word_size);
 	}
@@ -339,10 +339,10 @@ async function async_main(word_size, play_mode) {
 		return true;
 	}
 
-	// Opt into cheat is on a per-guess basis, page_num controls 
+	// Opt into cheat is on a per-guess basis, page_num controls
 	// pagination and both are reset after each loop.
-	var cheat = false; 
-	var page_num = 0; 
+	var cheat = false;
+	var page_num = 0;
 
 	// Main loop executed once per user input
 	var guess_list = []; var hint_list = [];
@@ -356,15 +356,15 @@ async function async_main(word_size, play_mode) {
 			console.log('');
 		}
 
-		// Prompt for guess +/- hint | q/h/p 
+		// Prompt for guess +/- hint | q/h/p
 	    console.log();
 	    result = await inquirer.prompt(question);
-		var response = result.data;		
+		var response = result.data;
 
 		// User hits return cycles through the matches
 		if (response.length == 0) {
 			if ((cheat) && (matches.length < NROWS)) {
-				return true; 
+				return true;
 			}
 			page_num++;
 			continue;
@@ -382,10 +382,10 @@ async function async_main(word_size, play_mode) {
 				cheat = true;
 				continue;
 			}
-		} 
+		}
 
 		// In both auto and manual mode the user may input
-		// a numeric index instead of a guess string. 
+		// a numeric index instead of a guess string.
 		if (isNaN(guess) == false) {
 			var index = parseInt(guess);
 			if (index > (matches.length)) {
@@ -396,15 +396,15 @@ async function async_main(word_size, play_mode) {
 				guess = matches[index-1][WORD];
 		}
 
-		var hint; 
-		if (play_mode == 'a') 
+		var hint;
+		if (play_mode == 'a')
 			hint = generate_pattern(guess, secret);
 		else
 			hint =  response[HINT];
-		
+
 	    var expected_bits = 0.0;
 		var entry = lookup_in_dictionary(guess, words);
-		if (!entry) {	
+		if (!entry) {
 			console.log('\nThe word \'' + guess + '\'' + ' is not in the dictionary.\n');
 				continue;
 		}
@@ -415,7 +415,7 @@ async function async_main(word_size, play_mode) {
 		var prev_matches = matches;
 		matches = filter_words (hint, matches, guess);
 		if (matches.length == 0) {
-			console.log('The guess \'' + guess + '\' the hint \'' + hint + 
+			console.log('The guess \'' + guess + '\' the hint \'' + hint +
 				' are inconsistent. Look for errors in previously input guesses and hints. It is also \
 possible that the opponent is using a different word list.\n');
 			matches = prev_matches;
@@ -427,7 +427,7 @@ possible that the opponent is using a different word list.\n');
 
 		var actual_bits = Math.log2(prev_matches.length) - Math.log2(matches.length);
 
-		display_summary(matches, expected_bits, actual_bits, 
+		display_summary(matches, expected_bits, actual_bits,
 			guess_list, hint_list, guess, '');
 
 		if ((guess == secret) || (hint == 'ggggg')) {
@@ -462,10 +462,10 @@ async function run_play_loop(words, n) {
 }
 
 function play_one_game(words) {
-	
+
 	var matches = words;
 
-	var page_num = 0; 
+	var page_num = 0;
 	var guess_list = []; var hint_list = [];
 	var secret = generate_secret(words);
 
@@ -491,7 +491,7 @@ function play_one_game(words) {
 
 		console.log('');
 		sleep(SLEEP_TIME);
-	    
+
 		if (guess == secret) {
 			return true;
 		}
@@ -503,11 +503,11 @@ var rgxargs= '^(([4-9]|10)|[atm])$';
 var badargs = 'Bad command line args';
 
 export var main = function () {
-
+//	debugger;
 	var word_size = '';
 	var play_mode = '';
 	var args = process.argv.slice(2);
-	
+
 	if (args.length) {
 		var regex = new RegExp(rgxargs);
 		if (args[0].match(regex) == null) {
@@ -522,7 +522,7 @@ export var main = function () {
 				word_size = args[0];
 		}
 		else if (args.length == 2) {
-			if (isNaN(args[0]) 
+			if (isNaN(args[0])
 				|| (args[1] != 'a' && args[1] != 't' && args[1] != 'm')) {
 				console.log(badargs);
 				return false;
@@ -537,8 +537,7 @@ export var main = function () {
 	}
 	return async_main(word_size, play_mode);
 }
-			
+
 main();
 //	https://wordlegame.org?challenge=c2Nhcnk
 // #sourceMappingURL=wordl.map
-

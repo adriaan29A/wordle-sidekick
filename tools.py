@@ -6,23 +6,23 @@ from cmath import inf
 
 
 # Tuple indexes
-WORD        = 0 
+WORD        = 0
 ENTROPY     = 1
 FREQ        = 1
 
 MAX_WORDS = 20000
 
-   
+
 class Hint:
     miss    = 'b'
     hit     = 'g'
-    other   = 'y'     
+    other   = 'y'
 
 def generate_pattern(source, target):
     """
     The one true Wordle algorithm
-    
-    
+
+
     """
 
     n = len(source)
@@ -31,7 +31,7 @@ def generate_pattern(source, target):
     s = source
     t = target
 
-    for i in range(n): 
+    for i in range(n):
 
         if s[i] == t[i]:
             pattern[i] = Hint.hit
@@ -49,7 +49,7 @@ def generate_pattern(source, target):
 
     res = ''
     for i in range(n):
-        res = res + pattern[i] 
+        res = res + pattern[i]
 
     return res
 
@@ -71,7 +71,7 @@ def verify_pattern(pattern, source, target):
     return res
 
 def filter_words(pattern, words, src):
-    """ 
+    """
     Given a pattern like bgyyb, a list of (word, entropy) tuples and a candidate
     (target) word returns the list of words that match that combination of pattern and word.
     """
@@ -83,7 +83,7 @@ def filter_words(pattern, words, src):
     return matches
 
 def read_word_data(filename, is_int):
-    """ 
+    """
     Returns an array of 2-tuples.
 
     """
@@ -105,21 +105,21 @@ def read_word_data(filename, is_int):
 def apply_threshold(freq, max_freq):
 
     # Magic numbers for sigmoid function- I eyeballed
-    # these to get a reasonable looking threshhold. 
+    # these to get a reasonable looking threshhold.
     c1 = 1000; c2 = 4.2 / c1
 
     f = freq / max_freq
-    if f == 0: 
+    if f == 0:
         y = 1.0 / inf
     else:
-        y  =  1.0 / (1 + math.exp(-1.0 * c1 * (f - c2)))  
-       
+        y  =  1.0 / (1 + math.exp(-1.0 * c1 * (f - c2)))
+
     return y
 
 
 def generate_entropies(filename):
-    """ 
-    Compute the expected value of each word. 
+    """
+    Compute the expected value of each word.
 
 
     """
@@ -133,7 +133,7 @@ def generate_entropies(filename):
     wdlist = []
 
     for i in range(n):
-        
+
         patterns = {}
         for j in range(n):
 
@@ -179,11 +179,11 @@ class Odometer:
         i = 0
         while self.increment_and_carry(i):
             i+=1
-            if i == self.n: 
+            if i == self.n:
                 break
 
 
-BASE = 3 
+BASE = 3
 def iterate_and_do(filename):
     """
     Test function. Loops through all possible hint patterns

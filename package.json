@@ -6,36 +6,37 @@
     "module": "cli.js",
     "type": "module",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "bin": {
-      "wordle-sidekick": "cli.js"
+        "wordle-sidekick": "cli.js"
     },
     "files": [
-      "cli.js",
-      "tools.py",
-      "package.json",
-      "README.md",
-      "entropies/*.*",
-      "frequencies/*.*"
+        "cli.js",
+        "tools.py",
+        "package.json",
+        "README.md",
+        "LICENSE.txt",
+        "entropies/*.*",
+        "frequencies/*.*"
     ],
     "keywords": [
-      "Wordle",
-      "Solver",
-      "Information Theory",
-      "Von Neumann Entropy",
-      "CLI"
+        "Wordle",
+        "Solver",
+        "Information Theory",
+        "Von Neumann Entropy",
+        "CLI"
     ],
     "repository": {
-      "type": "git",
-      "url": "https://github.com/adriaan29A/wordle-sidekick.git"
+        "type": "git",
+        "url": "https://github.com/adriaan29A/wordle-sidekick.git"
     },
     "dependencies": {
-      "arg": "^5.0.2",
-      "esm": "^3.2.18",
-      "fs": "^0.0.1-security",
-      "inquirer": "^9.0.0"
+        "arg": "^5.0.2",
+        "esm": "^3.2.18",
+        "fs": "^0.0.1-security",
+        "inquirer": "^9.0.0"
     },
     "author": "Adriaan",
     "license": "MIT"
-  }
+}
